@@ -15,6 +15,8 @@
 		D0284A7F2C2BBBF700156FCF /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = D0284A7D2C2BBB4C00156FCF /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		D0284A832C2BBC2D00156FCF /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0284A822C2BBC2D00156FCF /* RealmManager.swift */; };
 		D0284A862C2BBE6100156FCF /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0284A852C2BBE6100156FCF /* Task.swift */; };
+		D0284A892C2BDCB000156FCF /* TodoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0284A882C2BDCB000156FCF /* TodoListView.swift */; };
+		D0284A8B2C2BE5D600156FCF /* TaskCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0284A8A2C2BE5D600156FCF /* TaskCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +41,8 @@
 		D0284A752C2BBB0F00156FCF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D0284A822C2BBC2D00156FCF /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		D0284A852C2BBE6100156FCF /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		D0284A882C2BDCB000156FCF /* TodoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListView.swift; sourceTree = "<group>"; };
+		D0284A8A2C2BE5D600156FCF /* TaskCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,7 @@
 		D0284A6D2C2BBB0E00156FCF /* TodoList */ = {
 			isa = PBXGroup;
 			children = (
+				D0284A872C2BDC9D00156FCF /* Views */,
 				D0284A842C2BBE2900156FCF /* Models */,
 				D0284A812C2BBC1A00156FCF /* Managers */,
 				D0284A6E2C2BBB0E00156FCF /* TodoListApp.swift */,
@@ -104,6 +109,15 @@
 				D0284A852C2BBE6100156FCF /* Task.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		D0284A872C2BDC9D00156FCF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D0284A882C2BDCB000156FCF /* TodoListView.swift */,
+				D0284A8A2C2BE5D600156FCF /* TaskCellView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,8 +199,10 @@
 			files = (
 				D0284A862C2BBE6100156FCF /* Task.swift in Sources */,
 				D0284A712C2BBB0E00156FCF /* ContentView.swift in Sources */,
+				D0284A892C2BDCB000156FCF /* TodoListView.swift in Sources */,
 				D0284A6F2C2BBB0E00156FCF /* TodoListApp.swift in Sources */,
 				D0284A832C2BBC2D00156FCF /* RealmManager.swift in Sources */,
+				D0284A8B2C2BE5D600156FCF /* TaskCellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
