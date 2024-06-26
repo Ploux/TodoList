@@ -24,23 +24,27 @@ struct TaskCellView: View {
     }
     
     var body: some View {
-        HStack {
-            Image(systemName: task.isCompleted ? "checkmark.square" : "square")
-                .onTapGesture {
-                    let taskToUpdate = realm.object(ofType: Task.self, forPrimaryKey: task._id)!
-                    try? realm.write {
-                        taskToUpdate.isCompleted.toggle()
+        
+        NavigationLink {
+            NotesView(task: task)
+        } label: {
+            HStack {
+                Image(systemName: task.isCompleted ? "checkmark.square" : "square")
+                    .onTapGesture {
+                        let taskToUpdate = realm.object(ofType: Task.self, forPrimaryKey: task._id)!
+                        try? realm.write {
+                            taskToUpdate.isCompleted.toggle()
+                        }
                     }
-                    
-                }
-            Text(task.title)
-            Spacer()
-            Text(task.priority.rawValue)
-                .padding(6)
-                .frame(width: 75)
-                .background(priorityBackground(task.priority))
-                .foregroundColor(.white)
-                .clipShape(RoundedRectangle(cornerRadius: 10.0, style: .continuous))
+                Text(task.title)
+                Spacer()
+                Text(task.priority.rawValue)
+                    .padding(6)
+                    .frame(width: 75)
+                    .background(priorityBackground(task.priority))
+                    .foregroundColor(.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 10.0, style: .continuous))
+            }
         }
     }
 }

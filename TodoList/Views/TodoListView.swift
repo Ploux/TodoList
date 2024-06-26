@@ -45,6 +45,12 @@ struct TodoListView: View {
                             guard let taskToDelete = realm.object(ofType: Task.self, forPrimaryKey: task._id) else {
                                 return
                             }
+                            // delete all notes of a selected task
+                            for note in taskToDelete.notes {
+                                try? realm.write {
+                                    realm.delete(note)
+                                }
+                            }
                             
                             $tasks.remove(taskToDelete)
                         }
