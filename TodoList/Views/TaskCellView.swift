@@ -10,6 +10,7 @@ import SwiftUI
 struct TaskCellView: View {
     
     let task: Task
+    @Environment(\.realm) var realm
     
     private func priorityBackground(_ priority: Priority) -> Color {
         switch priority {
@@ -24,7 +25,14 @@ struct TaskCellView: View {
     
     var body: some View {
         HStack {
-            Image(systemName: "square")
+            Image(systemName: task.isCompleted ? "checkmark.square" : "square")
+                .onTapGesture {
+                    let taskToUpdate = realm.object(ofType: Task.self, forPrimaryKey: task._id)!
+                    try? realm.write {
+                        taskToUpdate.isCompleted.toggle()
+                    }
+                    
+                }
             Text(task.title)
             Spacer()
             Text(task.priority.rawValue)

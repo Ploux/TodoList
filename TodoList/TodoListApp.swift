@@ -12,7 +12,6 @@ struct TodoListApp: App {
     
     @State private var realmManager = RealmManager.shared
     
-    
     var body: some Scene {
         WindowGroup {
             VStack {
